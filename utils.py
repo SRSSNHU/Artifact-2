@@ -10,17 +10,17 @@ class PaymentHandler():
 # Concrete Handlers - open for extension
 class CreditCardHandler(PaymentHandler):
     def pay(self, amount: float) -> None:
-        print(f"\n✔ Credit Card payment of ${amount:.2f} processed.\n")
+        print(f"\n✔ Credit Card payment of ${amount:.2f} processed.")
 
 
 class PayPalHandler(PaymentHandler):
     def pay(self, amount: float) -> None:
-        print(f"\n✔ PayPal payment of ${amount:.2f} processed.\n")
+        print(f"\n✔ PayPal payment of ${amount:.2f} processed.")
 
 
 class CryptoHandler(PaymentHandler):
     def pay(self, amount: float) -> None:
-        print(f"\n✔ Crypto payment of ${amount:.2f} processed.\n")
+        print(f"\n✔ Crypto payment of ${amount:.2f} processed.")
 
 
 # Processor is closed for modification - extend by registering new handlers
@@ -32,7 +32,7 @@ class PaymentProcessor:
         self.__handlers[payment_type] = handler
 
     def process_payment(self) -> None:
-        payment_type = input(f"Enter payment type ({'/'.join(self.__handlers)}): ").lower()
+        payment_type = input(f"\nEnter payment type ({'/'.join(self.__handlers)}): ").lower()
         amount = float(input("Enter payment amount: "))
 
         handler = self.__handlers.get(payment_type)

@@ -9,17 +9,18 @@ def main():
     processor.register("crypto", CryptoHandler())
 
     while True:
-        print("1. Process Payment")
+        print("\n1. Process Payment")
         print("2. Exit")
 
-        choice = input("Choose an option: ")
+        choice = input("\nChoose an option: ")
 
         if choice == "1":
             processor.process_payment()
         elif choice == "2":
+            print("\nNow exiting program.\n")
             break
         else:
-            print("\nInvalid Option.\n")
+            print("\nInvalid Option.")
 
 
 if __name__ == "__main__":
